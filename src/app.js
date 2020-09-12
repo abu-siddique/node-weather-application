@@ -29,13 +29,13 @@ hbs.registerPartials(partialPaths);
 app.get('',(req,res)=>{
     res.render('index',{
         title:'weather app',
-        name:"abu"
+        name:"This is about weather information"
     })
 })
 app.get('/about',(req,res)=>{
     res.render('about',{
         title:'about me',
-        name:'abu bakkar'
+        name:'this is all about'
     })
 })
 
@@ -44,7 +44,7 @@ app.get('/help',(req,res)=>{
     res.render('help',{
        Help:'this is helped text',
        title:'need help ',
-       name:'abu bakkar siddique'
+       name:'How can i help you?'
     })
  })
 
@@ -66,12 +66,12 @@ app.get('/weather',(req,res)=>{
     geocode(req.query.address,(error,{latitude,longitude,location}={})=>{
         if(error)
         return res.send({error})
-        forecast(latitude,longitude,(error,{temperature,place,rain})=>{
+        forecast(latitude,longitude,(error,{temperature,rain})=>{
             if(error)
             return res.send({error})
             res.send({
                 temperature:temperature,
-                place:place,
+                place:location,
                 rain:'there is '+rain+' percent chance of raining',
                 address:req.query.address
             })

@@ -9,7 +9,7 @@ const forecast=(latitude,longitude,callback)=>{
         else{
             callback(undefined,{
                temperature:body.current.temperature,
-               place:body.location.name,
+               //place:body.location.name,
                rain:body.current.precip
             })
         }
