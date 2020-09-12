@@ -2,7 +2,7 @@
 
 const weatherForm=document.querySelector('form')
 const search=document.querySelector('input')
-const messageZero=querySelector('#message-0')
+const messageZero=document.querySelector('#message-0')
 const messageOne=document.querySelector('#message-1')
 const messageTwo=document.querySelector("#message-2")
 //messageOne.textContent='i am text content';
@@ -12,6 +12,7 @@ weatherForm.addEventListener('submit',(e)=>{
     const location=search.value;
 
     messageOne.textContent='loading...';
+    messageZero.textContent='';
     messageTwo.textContent=''; 
 
     fetch('/weather?address='+location).then( (response)=>{
