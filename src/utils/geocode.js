@@ -6,8 +6,8 @@ const geocode=(address,callback)=>{
          request({url,json:true},(error,response,body)=>{
          if(error)
         callback('unable to defined',undefined)
-        else if(body.features.length==0)
-        callback('try again',undefined)
+        else if(body.message || body.features.length==0)
+        callback('invalid address',undefined)
         else{
             callback(undefined,{
                 latitude:body.features[0].center[0],

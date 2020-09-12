@@ -72,7 +72,7 @@ app.get('/weather',(req,res)=>{
             res.send({
                 temperature:temperature,
                 palce:place,
-                rain:'ther is '+rain+' percent chance of raining',
+                rain:'there is '+rain+' percent chance of raining',
                 address:req.query.address
             })
         })
